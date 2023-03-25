@@ -1,0 +1,30 @@
+First, create a BankAccount class that has the following properties:
+AccountNumber (string)
+AccountType (string)
+Balance (decimal)
+OwnerName (string)
+Create a SavingsAccount class that inherits from BankAccount and adds the following properties:
+InterestRate (decimal)
+Create a CheckingAccount class that inherits from BankAccount and adds the following properties:
+MonthlyFee (decimal)
+MinimumBalance (decimal)
+Create an interface called ITransferable that has a Transfer method that takes in two BankAccount objects and a decimal representing the amount to transfer.
+
+Modify the BankAccount class to implement the ITransferable interface, adding the following Transfer method:
+
+The method should check if the account has sufficient funds to transfer the requested amount, and if not, throw an exception.
+The method should deduct the amount from the current account's balance and add it to the target account's balance.
+Create an abstract class called BankTransaction with a method called ExecuteTransaction that takes in two BankAccount objects and a decimal representing the amount to transfer.
+
+Create two subclasses of BankTransaction called DepositTransaction and WithdrawTransaction.
+
+DepositTransaction should add the specified amount to the specified account's balance.
+WithdrawTransaction should subtract the specified amount from the specified account's balance.
+Create a static class called BankTransactionFactory that has two methods:
+CreateDepositTransaction, which returns a new instance of DepositTransaction.
+CreateWithdrawTransaction, which returns a new instance of WithdrawTransaction.
+Create a complex method called TransferFunds that takes in two BankAccount objects and a decimal representing the amount to transfer.
+The method should create a new instance of WithdrawTransaction using BankTransactionFactory.CreateWithdrawTransaction and pass in the source account and amount to withdraw.
+The method should then create a new instance of DepositTransaction using BankTransactionFactory.CreateDepositTransaction and pass in the target account and the withdrawn amount.
+Finally, the method should call the ExecuteTransaction method on both transactions to complete the transfer.
+Here's some sample code to get you started:

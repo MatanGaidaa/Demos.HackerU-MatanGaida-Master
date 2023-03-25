@@ -1,0 +1,25 @@
+WPF STORE
+
+- Complete the WPF Store
+
+1) Init the data to be 2 level categories only
+2) Add 2 Combo-Box for 2 level categories
+2) When Root level category Combo is selected
+   all its child categories will be displayed in 
+   a secondery combobox
+   set the the first subcategory as the selected item
+3)  When Secondery comboBox is Selected all Products will be displayed in 
+   a listBox
+
+----------------------------------
+4) try to create a delete button , when user click it it will delete 
+   the selected Product using the Store 
+----------------------------------
+5) 
+try to create addNew Product:
+when user click the button 
+- a new Dialog Window will be open with textboxes for each product property
+- category id will be taken from the selected combobox
+- When finish the new window will closeand 
+   new product object will be added to the new store
+- fill the product list  once again after added

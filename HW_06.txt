@@ -1,0 +1,68 @@
+HW 6 
+1) Create class that describe a course 
+course properties:
+  - Id:int
+  - Title:string
+  - Category:Enum (QA DotNet DevOps Graphics Webmaster General)
+  - Description:string
+  - Students:List<string>
+  - StudentsCount:int
+
+ Validation:
+ - Title Will have maximum 10 chrectres 
+ - Description will have maximum 30 charecters
+ - Id must have Get Only and only positive value
+ - StudentsCount will have Get only 
+ - each course must have maximum 10 students
+ 
+ Constractors:
+ -Create default constractor
+ -Create full Constractor 
+ 
+ Methods:
+//Add Student to course
+public void AddStudentName(string student)
+
+//Remove Student from course
+public void RemoveStudent(string student)
+
+//return all course properties including all students
+public string DisplayCourseInfo()
+
+//return only course Title And StudentsCount
+public string DiplayShortCourseInfo()
+
+
+From Main:
+2) Create  5 courses Instances using constractors
+   - 4 instances using full Constractor
+   - 1 instance using empty constractor and  set properties 
+
+Example for using the constractors:
+
+var students = new List<string>{"David Davidi","Moshe Moshiu"};
+Course c1 = new Course(1,"C#",Category.DotNet,"OOP",students);
+
+var studentsQA = new List<string>{"Roni Roniyahoo","Efrim Efrimi"};
+Course c2 = new Course(2,"Automate QA",Category.QA,"QA Automation",studentsQA) 
+
+3) Test all methods for each object:
+Example for 2 instances:
+//---------------------------------------
+c1.AddStudentName("Karim Abdul JABAR");
+c1.AddStudentName("Jhon Lenon");
+Console.WriteLine(c1.DisplayCourseInfo());
+c1.RemoveStudent("Jhon Lenon");
+Console.WriteLine(c1.DisplayCourseInfo());
+Console.WriteLine(c1.DiplayShortCourseInfo());
+//---------------------------------------
+c2.AddStudentName("Shor Gad");
+Console.WriteLine(c2.DisplayCourseInfo());
+c2.RemoveStudent("Shor Gad");
+Console.WriteLine(c2.DisplayCourseInfo());
+Console.WriteLine(c2.DiplayShortCourseInfo());
+//---------------------------------------
+
+4) Calculate numbers of students in all courses
+ 
+

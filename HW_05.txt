@@ -1,0 +1,30 @@
+1) 
+ 1.1) Create Rectangle Class
+    3 Data Properties:
+   - int Width
+   - int Height
+   - char tav
+   
+   4 Methods:
+   - void DisplayInfo
+      this method should print the rectangle inner properties Data
+   - void Draw(bool isFull)
+     this method should print a rectangle
+     if isFull is true it should draw full rectangle 
+     else it should draw only border Rectangle
+   -  int GetArea()//שטח מלבן
+   -  int GetPerimeter() //היקף מלבן 
+ 
+   
+1.2) Create 5 Intances(objects) of  Rectangle class
+     Test all Rectangle methods for each object created 
+
+1.3) Read 3 user input  parameters (width,height,tav)
+     and initialize new Rectangle Instance 
+     with the user input parameters
+   
+1.4) Create Array of 4 Rectangles 
+     and Draw all rectangles to console
+
+
+     

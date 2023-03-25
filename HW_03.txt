@@ -1,0 +1,88 @@
+
+Homework 3
+---------------------------------------------------
+Q1) Create a new  method name it DrawRectangleBorder 
+   the method will print a rectangle on the console
+   the method will read 4 parmeters from the user 
+       
+    1 int h: the height of the rectngle 
+    2 int w: the width of the rectngle
+    3 char tav: a chrecter to draw the rectangle
+    4 bool isFull: is rectangle full or bordered only   
+
+    Example 1:
+    for h=3 w=10 tav='*' isFull=false 
+    the method will print:
+
+    ********** 
+    *        *
+    **********
+    hight:3 X width:10
+    size = 26
+    
+    Example 2:
+    for h=3 w=10 tav='*' isFull=true 
+    the method will print:
+    
+    ********** 
+    **********    
+    **********
+    height:3 X width:10
+    Area = 30
+
+    validation:
+        if height or width are less the 2 print a msg 
+        and read again new parameters from user
+
+ ----------------------------------------------------------------
+ Q2) Create new method name it CreateList()
+     the method will:
+    1) initialize new List of object type : List<object> studentsgrades
+       this list holds both names (srings) and grades(int) of student
+  
+       read from user names and grades into the List
+       Example:
+index:         0             1           2             3    ..
+values:  "Israel Isreali"    95     "Moshe Moshienu"  100   ..
+     
+     2) after finishing reading the data into the list print the data:
+       2.1) print all names with grades:
+            "Israel Isreali"    95
+            "Moshe Moshienu"    100
+       2.2) print average of all grades
+       2.3) print student that have the best grade
+
+  validation: grade must be between 0-100
+----------------------------------------------------------------------
+Q3) Create new method name it CountriesNamesManager 
+  
+   1) The method will initialize a dynamic List of strings, name it CountriesList
+      List<string> CountriesList
+   2) create switch case menu that do the following operations
+    2.1) Add new Country operation: 
+         -read from user a new country name 
+         -add only if its not allready exsist
+         - if its exsist print msg
+    2.2) Remove country from list by name operation:
+         - read from user country name to be removed
+         - remove if exsist
+         - print if removed or not
+    2.3) Find coutry by prefix text: 
+         - read prefix of country 
+         - list all countries start with that prefix
+           examples : 
+            for "G"  
+            it will print Germany , Greece...
+                  
+    2.4) Show All Countries List numbered with index   
+-----------------------------------------------------------
+
+
+
+
+
+
+
+    
+
+    

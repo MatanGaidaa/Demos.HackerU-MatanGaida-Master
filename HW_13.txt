@@ -1,0 +1,19 @@
+Exceptions
+
+1)
+Write a method that Read lines from text file
+each line should be + or - expression
+Example:
+1+5
+6-10
+10+2
+2-1
+you should print the result of each line to the console
+if line has error display msg and Continue to other lines
+
+errors that a file may have: 
+ - File NotFounD
+ - Empty line
+ - Line is not number expression (A+2)
+ 
+you should check errors using try catch 

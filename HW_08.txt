@@ -1,0 +1,123 @@
+HW 8 - Inhheritance
+
+Create 3 classes
+
+Class Person
+ Properties:
+    - Addres
+    - Age
+    - City 
+    - Name
+    - DisplayInfoToConsole()
+   
+Class Customer
+    - ShippingAddress
+    - DisplayInfoToConsole()
+Class Employe
+    - Department
+    - Salery
+    -- DisplayInfoToConsole()  
+Class Student
+    - StudyClass
+    - inner/External (ENUM)
+    - DisplayInfoToConsole()
+
+1.1 Choose type for each property
+1.2 DisplayInfoToConsole will print all properties data to console
+1.3 Employe and Student and Customer should inherit Person
+1.4 DisplayInfoToConsole of child should call parent DisplayInfoToConsole
+1.5 create full + empty constractor foreach class
+1.6 Use base keyword in derived constractor
+1.7 create 1 instance of each class
+1.8 create array of person and add each object
+1.9 Iterate all objects and run DisplayInfoToConsole() of the Person part info
+1.10 Iterate all objects and run DisplayInfoToConsole() for each specific type
+
+--------------------------------------------------------------------------------
+
+2 Pockimon Fight:
+-----------------
+2.1)   Create  a Class Name It “Pockimon”	
+   
+  *Properties:
+	 - ID : string  
+	 - Name : string    -  the name of the pockimon
+     - LifePower:int    –  the strength  of the pockimon start from 100  (0 is die pockimon)
+	 - AmmunitionPower:int  - the Ammunition of a pockimon start from 20 (0 no able to attack any more)    
+   *Constractors : Full + Empty	
+   *Methods:
+     - Attack(Pockimon otherPockimon,int ammunitionPower) 
+	      //this method hit other pockimon	
+	      //it should substract the  lifepower of otherPockimon 
+         
+
+     Create 3 inherited classes from the Pockimon class 
+
+    2.2) WaterPockimon
+	   *Constractors: Full + Empty
+	   *Properties:
+           ElectricPower: int	(0 means no able to use ElectricAttackHit  any more)    
+       *Methods:	    
+	    - ElectricAttackHit(Pockimon otherPockimon)
+	 
+     
+	 2.3) AirPockimon
+	    *Constractors: Full + Empty
+        *Properties:
+           StormPower : int	    (0 means no able to do StormAttackHit  any more)    
+        *Methods:	    
+	    - StormAttackHit(Pockimon otherPockimon)
+	    
+	 
+	 2.4) ForestPockimon
+	   *Constractors: Full + Empty
+       *Properties:
+           WoodsPower : int	     (0 means no able to do WoodsAttackHit  any more) 
+       *Methods:	    
+	    - WoodsAttackHit(Pockimon otherPockimon)
+	    
+	2.5) Logics:	
+     - each pockimon start with LifePower = 100  and AmmunitionPower = 50 
+	 - ElectricPower of WaterPockimon start with 20
+     - StormPower of AirPockimon start with 25	
+	 - WoodsPower of ForestPockimon start with 30	 
+	 
+	 - When pockimon hit other pockimon using the Attack method:
+	      * it reduce 5 LifePower from the other pockimon
+		  * it reduce itself the AmmunitionPower according to the ammunitionPower it uses in the Attack method
+	
+	 - When WaterPockimon uses the ElectricAttackHit method :
+	      * it reduce 20 LifePower from the other pockimon
+		  * it reduce itself the 8 ElectricPower 
+		  * it reduce itself the 4 LifePower  
+	
+	 - When AirPockimon use the StormAttackHit method :
+	      * it reduce 10 LifePower from the other pockimon
+		  * it reduce itself the 5 StormPower 
+		  * it reduce itself the 3 LifePower 
+	
+	 - When ForestPockimon use the WoodsAttackHit method :
+	      * it reduce 8 LifePower from the other pockimon
+		  * it reduce itself 3 WoodsPower
+	      * it reduce itself the 2 LifePower
+		  
+
+    2.6) From Main:
+    
+	 Create Fight with WaterPockimon and AirPockimon (do attacks as you wish) till 1 pockimom die
+	 Example:
+	 WaterPockimon pockWater = new WaterPockimon(...)
+	 AirPockimon pockAir = new AirPockimon(...)
+	 pockAir.StormAttackHit(pockWater)
+	 pockWater.ElectricAttackHit(pockAir)
+	 pockAir.Attack(pockWater,5);
+	 pockWater.Attack(pockAir,7);
+	 ....
+	 ....
+	 
+    Create Fight with WaterPockimon and ForestPockimon (do attacks as you wish) till a pockimom die
+	
+
+	
+
+

@@ -1,0 +1,81 @@
+
+Create new class name it Hw1
+with namspace: Demos.HackerU.HomeWork
+
+1) Add Method name it CheckLowerUpperEquals
+   the method will get 2 strings and will return boolean
+   check if both string are equals ignoring camelcase
+   
+   for example:
+   for parameters:
+   "AabB"
+   "aAbb
+   the method will return true
+   ---------
+   for parameters:
+   "AabBX"
+   "aAbb"
+   the method will return false
+
+   test the method from main and print if equals or not
+-----------------------------------------------------------------
+
+2) Add Method name it ToEmail that
+get 2 parameters: 
+  - username: get user name 
+  - emailtype: get email type
+  the method should return an email address with the format
+  {username}@{emailtype}.com
+  example:
+  
+  -for parameters
+   username:  "gshor"
+   emailtype: "gmail"
+   the method will return 
+   gshor@gmail.com
+  
+  -for parmeters 
+   username:  "gshor"
+   emailtype: "outlook"
+   the method will return 
+   gshor@outlook.com
+   -----------
+   validations:
+
+   -if username is empty or  emailtype is empty
+     the method will return msg error that 
+     one of parameters are empty
+
+   - if username is more then 10 charecters
+     the method will return msg 
+     for not valid length username
+
+  - if username contains  . or _ 
+    the method return msg for  
+   . or _ are not allowed for username
+ ---------------   
+  *if there are multiple errors,
+   all of the messages 
+   should return from the method as combined string
+   and each error should start with *
+  example:
+   
+   -for parameters
+    username:  "g_shor"
+    emailtype: ""
+    the method will return: 
+    *one of parameters are empty *. or _ are not allowed for username
+  ---------------
+
+   *test the method from main and print (in main) the return value
+    and if result is valid or not valid email
+    
+    example output :
+    for "gshor" and "gmail" parameters print in main:
+    valid: gshor@gmail.com 
+    
+    for "g_shor" and "gmail" parameters  print in main:
+    not valid: *. or _ are not allowed for username
+  -----------------  
+
+  

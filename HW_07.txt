@@ -1,0 +1,101 @@
+HW 7:
+-----
+1) Create Product Class:
+
+Create Class name It Product
+Properties:
+ - id: int (Get Only)
+ - Title : string
+ - Desc : string
+ - Price: double
+ - Keywords :List<string> 
+ //Keywords  Related to product search for example if product is xbox keywords can be : (gaming,3d games,microsoft)
+ 
+Constractors:
+ - Full + Empty
+ 
+ Methods:
+ - string GetAsText() - Display All inner Data as string + Keywords
+ - string GetAsTextShort() -  Display All inner Data without Keywords
+ - string GetAllKeywordsAsTextSeperated(char seperatedChar) - exmple if seperatedChar is '|' the return value is "gaming|3d games|microsoft"
+ - void AddKeywords(string[] keywordstoAdd) - Add Keywords to exsisting keywords
+ - double Discount(int percentDiscount) - Calculate price discount by Percent 
+
+ -----------
+ 2) Create Category Class:
+ 
+ Create Class name it Category
+ 
+ Properties:
+ - id: int (Get Only)
+ - Title : string
+ - Products : List<Products>
+ 
+ Constractors:
+ - Category(int id,string title) //products will be added by methods 
+ - Category()
+ 
+ Methods:
+ - string GetAsText() - Display All Category info + Inner Products Info by calling  GetAsText() of product
+ - string GetAsTextShort() - Display All Category info Only 
+ - void AddProduct(Product newProductToAdd) - Adding New Product to category
+ - void AddProducts(Product[] productsToAdd) - Adding New Product to category
+ - Product GetProductById(int id);
+ - Product GetProductByTitle(string title);
+ - List<Product> FindAllProductsByKeyWord(string keyword) 
+ - void RemoveProductById(int id) - Removing product by ID
+ - void RemoveProductByTitle(string productName) - Removing Product By Name
+ - void DiscountAllProducts(int percent) - make discount for all inner products
+ - UpdateProductPrice(int productId,double newPrice)
+--------------------
+3) Create Instances:
+
+  - Create 5 category instances
+  - for each instance add 8 products using the AddProducts(..) or AddProduct(..) that you implemented
+--------------------
+
+4)  - Test all methods Of Category for each instance with your own data
+    - Test all Product Methods on a specific product instance (after using GetProductById(...)) 
+---------------------
+WPF(Advanced Question):
+
+5) Create Window name It CategoriesProductsWindow
+
+   5.1) define inner field : List<Category> CategoriesList
+   
+   5.2) cahnge the constractor with parameter List<Category>:
+        CategoriesProductsWindow(List<Category> categoriesList)
+        and initialized CategoriesList field
+		
+   5.3) Create 2 listBoxes in a grid using xaml 
+       - CategoriesListBox - ListBox Control to displaying categories items
+       - ProductListBox - ListBox  Control for displaying products items
+	   
+   5.4) Create method name it FillCategoriesListBox
+        - the method will display all Categories in CategoriesListBox (use GetAsTextShort())
+        - Run this method when window loaded (use loaded event of window)		
+
+  5.5)  When User Click a Category item in CategoriesListBox (change selection)
+        Display all Its inner Products in ProductListBox
+	- use the event SelectionChanged of the CategoriesListBox 
+	- fill the ProductListBox from the event method
+ 
+  5.6) Create a button that save all Categories and inner Products to file
+  
+  //Lots of work here (Advanced)  
+  5.7) create your own xaml design using buttons and textboxes to enable add/remove operations for both                  categories  and products  :
+       - adding new Category 
+       - removing category
+       - adding product
+       - removing product
+       
+       you should add layouts textboxes and buttons (as we did in classWork practices)
+       to let user input instance values
+ 	  
+	  
+         
+   
+ 
+ 
+ 
+ 

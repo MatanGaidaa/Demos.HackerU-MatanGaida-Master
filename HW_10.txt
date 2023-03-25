@@ -1,0 +1,27 @@
+Sure, here's an exercise for you:
+
+Create a program in C# that models a zoo. The zoo has different types of animals, including mammals, birds, and fish. Each type of animal has specific characteristics and behaviors.
+
+Here are the requirements:
+
+Create an abstract class called "Animal" with the following properties: Name (string), Age (int), and Weight (double). This class should also have an abstract method called "MakeSound".
+
+Create a subclass of "Animal" called "Mammal" with an additional property called "NumberOfLegs" (int). Mammals should have a method called "Nurse" that takes no parameters and returns a string indicating that the animal is nursing.
+
+Create a subclass of "Animal" called "Bird" with an additional property called "Wingspan" (double). Birds should have a method called "Fly" that takes no parameters and returns a string indicating that the bird is flying.
+
+Create a subclass of "Animal" called "Fish" with an additional property called "TypeOfWater" (string). Fish should have a method called "Swim" that takes no parameters and returns a string indicating that the fish is swimming.
+
+Create an interface called "IAnimalBehavior" with the following methods: "Eat" (takes no parameters and returns a string), "Sleep" (takes no parameters and returns a string), and "Play" (takes no parameters and returns a string).
+
+Modify each of the animal subclasses to implement the "IAnimalBehavior" interface.
+
+Create a static class called "Zookeeper" with a method called "FeedAnimals" that takes an array of "Animal" objects as a parameter and returns a string indicating that the animals have been fed.
+
+Create a class called "Zoo" with an array property called "Animals" that can hold up to 100 "Animal" objects. The "Zoo" class should have a method called "AddAnimal" that takes an "Animal" object as a parameter and adds it to the "Animals" array.
+
+Create a class called "Program" with a "Main" method that creates an instance of "Zoo" and several instances of "Mammal," "Bird," and "Fish" objects. Add the animal objects to the "Zoo" object using the "AddAnimal" method. Call the "Zookeeper.FeedAnimals" method passing in the "Animals" array as a parameter.
+
+Test your program by running it and verifying that the animals are correctly added to the zoo and that they can be fed using the "Zookeeper.FeedAnimals" method.
+
+Good luck!

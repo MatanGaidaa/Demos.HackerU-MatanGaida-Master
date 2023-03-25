@@ -1,0 +1,62 @@
+Hw 02:
+--------------------------------------------------------------------------
+1. Write a method that get array of strings and return the longest string 
+-----
+2. Write a method that get array of numbers and return a string of all numbers seperated with uderscore (example:2_3_4)
+-----
+3. Write a method name it Calculate that get 2 numbers and operator string (+/-/*/)
+    int Calculate(int num1,int num2, string operator)
+    the method will retutn avalue 
+    Example:
+    int x = Calculate(2,5,"+");
+    x will be 7
+  
+    read the numbers and operator from user input 
+    then call the Calculate method with the inputs as parameters 
+    and print the result number
+  
+    
+----
+4. Write a method name it DitanceFromAvg 
+  that get 2 parameters array of numbers (numbers) and a number (distanceAvg):
+  
+  List<int> DistanceFromAvg(int[] numbers,distanceAvg)
+  
+  the method will return a dynamic array of all numbers 
+  that the distance from avg is less then the value of distanceAvg
+  example:
+ input parameters:
+ 10, 2, 38, 22, 38, 23, 21
+ distanceAvg = 2
+ 
+ avg is 22
+ it should return: 21 22 23
+ 21 distance from 22  1
+ 22 distance from 22  0
+ 23 distance rom  22  1
+ 
+ -----  
+5. write a method that read from user string values dynamically (use List<string>) untill
+  the user input the "exit" word 
+  
+  the method will print all strings in the list as uppercase from last to first
+  print how many strings in the list
+ -----
+ 6. write a method  that get list of numbers and print all numbers sorted (search google)
+ -----
+ 7. write a method that read integers values into List
+   each value must be between 0-100 
+   if it is not between 0-100 the value should not added to the list
+   and user should read the number again
+ ----  
+8. write a method that get 2 parameters :
+ -   list of strings (strings)  
+ -   string (valuetoremove):              
+   List<string> RemoveFromList(List<string> strings,string valuetoremove)     
+ -   the method will remove all apperences of valuetoremove from the list
+     and return a list witout the valurs removed
+----     
+9.   wtite a method that get decimal list of numbers 
+    - the method will remove all numbers that are bigget then average
+    - it will print the removed indexes
+    - it will return the new list (after removing the numbers biggest then avg)  

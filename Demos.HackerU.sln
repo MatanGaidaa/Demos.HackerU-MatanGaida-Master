@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU", "Demos.HackerU\Demos.HackerU.csproj", "{6CE1E037-DD63-4E89-B110-87F95F7B6D83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{B7CB4032-3EAC-4211-9478-A993E8448A2D}"
+	ProjectSection(SolutionItems) = preProject
+		GPTTargil.txt = GPTTargil.txt
+		HW10.png = HW10.png
+		HW_01.txt = HW_01.txt
+		HW_02.txt = HW_02.txt
+		HW_03.txt = HW_03.txt
+		HW_04.txt = HW_04.txt
+		HW_05.txt = HW_05.txt
+		HW_06.txt = HW_06.txt
+		HW_07.txt = HW_07.txt
+		HW_08.txt = HW_08.txt
+		HW_09.jpg = HW_09.jpg
+		HW_11.txt = HW_11.txt
+		Hw_12.txt = Hw_12.txt
+		HW_13.txt = HW_13.txt
+		HW_14.txt = HW_14.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU.HomeWork", "Demos.HackerU.HomeWork\Demos.HackerU.HomeWork.csproj", "{A793DE91-0776-42C3-BFEE-938888D77F0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU.Wpf", "Demos.HackerU.Wpf\Demos.HackerU.Wpf.csproj", "{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CE1E037-DD63-4E89-B110-87F95F7B6D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE1E037-DD63-4E89-B110-87F95F7B6D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE1E037-DD63-4E89-B110-87F95F7B6D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE1E037-DD63-4E89-B110-87F95F7B6D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A793DE91-0776-42C3-BFEE-938888D77F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A793DE91-0776-42C3-BFEE-938888D77F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A793DE91-0776-42C3-BFEE-938888D77F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A793DE91-0776-42C3-BFEE-938888D77F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3508EA1-C98B-442C-B50F-97CC5D7F4F6F}
+	EndGlobalSection
+EndGlobal
