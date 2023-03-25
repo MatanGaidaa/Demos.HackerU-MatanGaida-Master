@@ -1,5 +1,6 @@
 ﻿using Demos.HackerU.HomeWork.Store;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -89,9 +90,10 @@ namespace Demos.HackerU.Wpf
 
             if (comboCategories.SelectedIndex == 0)
             {
-                this.ListBoxProducts.Items.Clear();
+                ListBoxProducts.ItemsSource = null;
                 return;
             }
+
 
             string categorySelected = comboCategories.SelectedItem.ToString();
             var categories = servProducts.GetSubCategories(4);
