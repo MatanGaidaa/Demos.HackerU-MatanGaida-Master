@@ -212,5 +212,22 @@ namespace Demos.HackerU.Wpf
 
         }
 
+        private void AddNewProduct1(object sender, RoutedEventArgs e)
+        {
+            var selected = comboCategoriesSub.SelectedItem;
+
+            var catList = servProducts.GetAllCategory();
+            var filterCategory = catList.Find(item => item.Name == selected);
+
+            if (comboCategories.SelectedIndex > 0 && comboCategoriesSub.SelectedIndex > 0)
+            {
+                ProductWindow s = new ProductWindow(filterCategory.Id);
+                s.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Top Category And Sub Category Must Be Chosen");
+            }
+        }
     }
 }

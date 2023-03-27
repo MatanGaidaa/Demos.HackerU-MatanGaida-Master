@@ -10,7 +10,8 @@
         <ComboBox SelectionChanged="comboCategories_SelectionChanged" Name="comboCategories" Canvas.Left="220" Canvas.Top="90" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ComboBox SelectionChanged="comboCategoriesSub_SelectionChanged" Name="comboCategoriesSub" Canvas.Left="458" Canvas.Top="90" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <ListBox Name="ListBoxProducts" SelectionChanged="ListBoxProducts_SelectionChanged" Background="WhiteSmoke" BorderThickness="2" BorderBrush="LightGray" Height="226" Width="500" Canvas.Left="176" Canvas.Top="139" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Button  Content="Delete Product" Canvas.Left="367" Canvas.Top="390" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
+        <Button  Content="Delete Product" Canvas.Left="251" Canvas.Top="390" HorizontalAlignment="Left" VerticalAlignment="Center" Width="118" Click="Button_Click"/>
+        <Button Content="Add New Product" Click="AddNewProduct1" Canvas.Left="484" Canvas.Top="390" HorizontalAlignment="Left" VerticalAlignment="Center" Width="128"/>
 
     </Canvas>
 

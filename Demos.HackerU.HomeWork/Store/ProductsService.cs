@@ -178,6 +178,9 @@ namespace Demos.HackerU.HomeWork.Store
             _products[index] = newProductInfo;
         }
 
-
+        public List<StoreCategory> GetAllCategory()
+        {
+            return _categories;
+        }
     }
 }

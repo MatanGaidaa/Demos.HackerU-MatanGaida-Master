@@ -21,6 +21,7 @@ namespace Demos.HackerU.HomeWork.Store
         List<StoreProduct> GetAllProductsByPrice(int lowPrice, int highPrice);
         List<StoreProduct> GetAllProductsByPrice(int inCategoryId, int lowPrice, int highPrice);
         List<StoreProduct> GetAllProducts();
+        List<StoreCategory> GetAllCategory();
         StoreProduct FindProductByName(string productname);
         void RemoveAllProductsOfCategory(int categoryId);
         void SaveAllProductsByCategory(int categoryId); //file name will be the according to the value of of the Category Name property 	
