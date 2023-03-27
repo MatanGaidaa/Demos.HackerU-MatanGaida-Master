@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demos.HackerU.Wpf"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="ProductWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,6 +20,14 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
+        <Label Background="Black"  Content="Add New Product" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Height="67" Width="269" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Background="Black" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Foreground="White" Height="44" Width="83" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Background="Black" Content="Price" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0" Grid.Row="2" Foreground="White" Height="44" Width="83" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Background="Black" Content="In Stock" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Foreground="White" Height="44" Width="83" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox Name="txtName" TextWrapping="Wrap"  Grid.Column="1" Grid.Row="1" Background="#FFE5E1E1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="456" Height="27" TextChanged="txtName_TextChanged"/>
+        <TextBox Name="txtPrice" TextWrapping="Wrap"  Grid.Column="1" Grid.Row="2" Background="#FFE5E1E1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="304" Height="28" TextChanged="txtPrice_TextChanged"/>
+        <ComboBox Name="comboInStock" Grid.Column="1" Margin="204,29,204,28" Grid.Row="3" RenderTransformOrigin="0.504,-0.027" SelectionChanged="comboInStock_SelectionChanged"/>
+        <Button Name="createProduct" Grid.Column="1" Content="Create" HorizontalAlignment="Center" Margin="0,29,0,0" Grid.Row="4" VerticalAlignment="Top" Width="69" Click="createProduct_Click"/>
 
 
     </Grid>

@@ -27,11 +27,13 @@ namespace Demos.HackerU.Wpf
     {
         private IProductsService servProducts;
 
+
         public StoreWindow()
         {
             InitializeComponent();
             servProducts = ProductsService.GetInstance();
         }
+
 
         /// <summary>
         /// Once When Window is First loaded with all 
@@ -44,6 +46,8 @@ namespace Demos.HackerU.Wpf
             //Initialization Of GUI WITH DATA
             InitData();
             InitView();
+
+
 
         }
 
