@@ -149,7 +149,13 @@ namespace Demos.HackerU.Wpf
 
         }
 
+
         private void comboCategoriesSub_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowComboSubData();
+
+        }
+        private void ShowComboSubData()
         {
             if (comboCategories.SelectedIndex == 1)
             {
@@ -187,10 +193,6 @@ namespace Demos.HackerU.Wpf
 
                 }
             }
-
-
-
-
 
         }
 
@@ -232,6 +234,7 @@ namespace Demos.HackerU.Wpf
             {
                 MessageBox.Show("Top Category And Sub Category Must Be Chosen");
             }
+            ShowComboSubData();
         }
     }
 }
