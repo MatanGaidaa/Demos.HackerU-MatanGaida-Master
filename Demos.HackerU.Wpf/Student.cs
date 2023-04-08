@@ -9,7 +9,7 @@ namespace Demos.HackerU.Wpf
 {
     public class Student
     {
-        public  Student() 
+        public Student()
         {
             Name = "<No Name>";
             Id = "<No ID>";
@@ -26,7 +26,7 @@ namespace Demos.HackerU.Wpf
 
         //Property
         public string Name { get; set; }
-        public string Id { get;  set; }
+        public string Id { get; set; }
         public int Grade { get; set; }
 
         public string ShowStudent()
@@ -34,11 +34,14 @@ namespace Demos.HackerU.Wpf
             string displayInfo = $"{Id}-{Name}-({Grade})";
             return displayInfo;
         }
-        public  bool IsFailed()
+        public bool IsFailed()
         {
             return (Grade <= 55);
         }
-
+        public override string ToString()
+        {
+            return this.Id + " - " + this.Name + "(" + Grade + ")";
+        }
 
 
 

@@ -190,5 +190,12 @@ namespace Demos.HackerU.Wpf
             StoreWindow s = new StoreWindow();
             s.ShowDialog();
         }
+
+        private void btnStudent_Click(object sender, RoutedEventArgs e)
+        {
+
+            JsonSerialization j = new JsonSerialization();
+            j.ShowDialog();
+        }
     }
 }
