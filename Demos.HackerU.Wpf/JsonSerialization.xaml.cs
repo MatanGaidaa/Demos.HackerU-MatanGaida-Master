@@ -1,8 +1,10 @@
-﻿using Microsoft.Win32;
+﻿using Demos.HackerU.Wpf.Helpers;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
@@ -54,7 +56,7 @@ namespace Demos.HackerU.Wpf
             }
 
             else if (this.listBoxStudents.SelectedItem is Student selectedStudent)
-           {
+            {
                 txtId.Text = selectedStudent.Id;
                 txtName.Text = selectedStudent.Name;
                 txtGrade.Text = selectedStudent.Grade.ToString();
@@ -75,21 +77,21 @@ namespace Demos.HackerU.Wpf
             };
 
             repo.AddStudent(emtyStudent);
-           
+
             // listBoxStudents.Items.Clear();
-           //Refresh GUI From RepO
+            //Refresh GUI From RepO
             listBoxStudents.ItemsSource = null;
             listBoxStudents.ItemsSource = this.repo.GetAllStudents();
-            
+
             iNoName++;
         }
         private void SetSelectedById(string id)
         {
-           
+
         }
         private void SetSelectedByIndex(int index)
         {
-           
+
         }
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
@@ -107,9 +109,9 @@ namespace Demos.HackerU.Wpf
                 //txtName.Text = string.Empty;
                 //txtGrade.Text = string.Empty;
 
-                if (listBoxStudents.Items.Count>0)
+                if (listBoxStudents.Items.Count > 0)
                 {
-                    listBoxStudents.SelectedIndex = listBoxStudents.Items.Count-1;
+                    listBoxStudents.SelectedIndex = listBoxStudents.Items.Count - 1;
                 }
 
             }
@@ -117,7 +119,7 @@ namespace Demos.HackerU.Wpf
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (listBoxStudents.SelectedIndex==-1)
+            if (listBoxStudents.SelectedIndex == -1)
             {
                 MessageBox.Show("No Selected Item");
                 return;
@@ -125,12 +127,12 @@ namespace Demos.HackerU.Wpf
 
             Student s = new Student();
             s.Id = txtId.Text;
-            s.Name =  txtName.Text;
+            s.Name = txtName.Text;
             try
             {
                 s.Grade = int.Parse(txtGrade.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Enter Number Format: 0-100");
                 txtGrade.Clear();
@@ -151,11 +153,11 @@ namespace Demos.HackerU.Wpf
 
 
             //2--Check If Directory Not Exsist 
-          //  if (!Directory.Exists("AppData"))
-          //  {
+            if (!Directory.Exists("AppData"))
+            {
                 //--Create New Directory (bin/debug....)
-           //     Directory.CreateDirectory("AppData");
-          //  }
+                Directory.CreateDirectory("AppData");
+            }
 
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -171,9 +173,9 @@ namespace Demos.HackerU.Wpf
             }
 
 
-            if (saveFileDialog.ShowDialog() ==true)
+            if (saveFileDialog.ShowDialog() == true)
             {
-                string filePathSelected =   saveFileDialog.FileName;
+                string filePathSelected = saveFileDialog.FileName;
 
                 //1--Get Current Repo Students List
                 List<Student> students = repo.GetAllStudents();
@@ -193,7 +195,7 @@ namespace Demos.HackerU.Wpf
             //--Open Dialog
             OpenFileDialog dialog = new OpenFileDialog();
             //--Open Desktop
-            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             //--Open JSON Files Only
             dialog.Filter = "JSON Files|*.json;*.JSON;*.txt";
 
@@ -205,7 +207,7 @@ namespace Demos.HackerU.Wpf
                 this.PathLoader.Text = jsonFullPath;//Show Path In Text
 
                 //Desirialize + Refresh LIST
-            
+
                 string studentsText = File.ReadAllText(this.PathLoader.Text);
                 var studentsList =
                 JsonSerializer.Deserialize<List<Student>>(studentsText);
@@ -216,48 +218,33 @@ namespace Demos.HackerU.Wpf
                 }
                 //3)Sync GUI LIST
                 this.listBoxStudents.ItemsSource = null;
-                this.listBoxStudents.ItemsSource = repo.GetAllStudents(); ;
-
-
-
-
-
-
+                this.listBoxStudents.ItemsSource = repo.GetAllStudents();
             }
         }
         private void btnLoadData_Click(object sender, RoutedEventArgs e)
         {
-          
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            FilesHandling.ImageUpload(txtId.Text);
+            List<Student> students = repo.GetAllStudents();
+            var s = students.Find(x => x.Id == txtId.Text);
 
-            OpenFileDialog dialog = new OpenFileDialog();
-            if (dialog.ShowDialog() == true)
+            Student s1 = (Student)s;
+
+            if (Student.studentsImages.Count > 0)
             {
-                //Full Path Of Original IMage
-                string originalFullPath = dialog.FileName;//c:\\Images\animal.jpg
-                //Only File Name +Extention Of Original
-                string originalFileName =  Path.GetFileName(originalFullPath);//animal.jpg
-               
 
-                string  destinationFolder =  Path.Combine(Environment.CurrentDirectory , "AppData");
-                string destinationFile = Path.Combine(destinationFolder, originalFileName);
-               
-
-
-                File.Copy(originalFullPath, destinationFile);
-
+                s1.ImagePath = Student.studentsImages[txtId.Text];
             }
-              
 
-             
-
-           
+            //imageP.Source = new BitmapImage(new Uri(Student.studentsImages[txtId.Text]));
 
 
         }
+
     }
 }
 

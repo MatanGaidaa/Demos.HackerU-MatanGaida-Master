@@ -28,6 +28,9 @@ namespace Demos.HackerU.Wpf
         public string Name { get; set; }
         public string Id { get; set; }
         public int Grade { get; set; }
+        public string ImagePath { get; set; }
+
+        public static Dictionary<string, string> studentsImages = new Dictionary<string, string>();
 
         public string ShowStudent()
         {

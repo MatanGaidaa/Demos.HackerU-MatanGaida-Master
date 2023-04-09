@@ -1,0 +1,13 @@
+Complete Student Window
+
+1) Add Image for each student
+   - Set ImagePath property in Student Model
+   - Add XAML for displaying Image according that path
+   - open file dialog that chooe Image from any place in computer 
+     and copy it into AppData/Images directory
+     and update Model
+
+2) Add ComboBox that display List of all JSON files in AppData
+   When Selected It Should Load That FIles Into GUI
+
+3) Add Button that Sort All Products by Grade
