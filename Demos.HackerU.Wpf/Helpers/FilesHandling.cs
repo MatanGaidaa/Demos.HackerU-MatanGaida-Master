@@ -11,28 +11,22 @@ namespace Demos.HackerU.Wpf.Helpers
     public class FilesHandling
     {
 
-
-        public static void AddStudentImage(string id, string imagePath)
-        {
-            Student.studentsImages.Add(id, imagePath);
-        }
-
         private static string CreateFolder()
         {
-
             //2--Check If Directory Not Exsist 
-            if (!Directory.Exists("AppData"))
+            if (!Directory.Exists("AppData\\Images"))
             {
                 //--Create New Directory (bin/debug....)
                 Directory.CreateDirectory("AppData\\Images");
             }
-            return "AppData\\StudentsImages";
+
+            return "AppData\\Images";
 
         }
 
-        public static void ImageUpload(string id)
+        public static string ImageUpload()
         {
-
+            string destinationFile = "";
             OpenFileDialog dialog = new OpenFileDialog();
             if (dialog.ShowDialog() == true)
             {
@@ -45,18 +39,20 @@ namespace Demos.HackerU.Wpf.Helpers
                 string destinationFolder = Path.Combine(Environment.CurrentDirectory, CreateFolder());
 
                 //combain global destination to destination
-                string destinationFile = Path.Combine(destinationFolder, originalFileName);
+                destinationFile = Path.Combine(destinationFolder, originalFileName);
 
 
-                //file copy from user folder to our destination and cheking if the photo name exstis
-                if (File.Exists(destinationFile))
+                //file copy from user folder to our destination and check if it exists
+                if (!File.Exists(destinationFile))
                 {
                     File.Copy(originalFullPath, destinationFile);
                 }
 
 
-                AddStudentImage(id, destinationFile);
             }
+            return destinationFile;
         }
+
+
     }
 }

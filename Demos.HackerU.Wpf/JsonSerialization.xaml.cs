@@ -45,6 +45,17 @@ namespace Demos.HackerU.Wpf
         }
         private void listBoxStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var student = listBoxStudents.SelectedItem as Student;
+            if (student.ImagePath != null)
+            {
+                imgTitle.Source = new BitmapImage(new Uri(student.ImagePath));
+            }
+            else
+            {
+                imgTitle.Source = new BitmapImage();
+            }
+
+
             //--Check On Remove
             if (listBoxStudents.Items.Count == 0)
             {
@@ -228,21 +239,16 @@ namespace Demos.HackerU.Wpf
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            FilesHandling.ImageUpload(txtId.Text);
-            List<Student> students = repo.GetAllStudents();
-            var s = students.Find(x => x.Id == txtId.Text);
 
-            Student s1 = (Student)s;
 
-            if (Student.studentsImages.Count > 0)
+            var student = listBoxStudents.SelectedItem as Student;
+
+            student.ImagePath = FilesHandling.ImageUpload();
+
+            if (student.ImagePath != null)
             {
-
-                s1.ImagePath = Student.studentsImages[txtId.Text];
+                imgTitle.Source = new BitmapImage(new Uri(student.ImagePath));
             }
-
-
-            imageP.Source = new BitmapImage(new Uri(s1.ImagePath));
-
 
         }
 
