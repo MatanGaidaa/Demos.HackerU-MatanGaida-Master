@@ -241,7 +241,7 @@ namespace Demos.HackerU.Wpf
             }
 
 
-            //imageP.Source = new BitmapImage(new Uri(Student.studentsImages[txtId.Text]));
+            imageP.Source = new BitmapImage(new Uri(s1.ImagePath));
 
 
         }
