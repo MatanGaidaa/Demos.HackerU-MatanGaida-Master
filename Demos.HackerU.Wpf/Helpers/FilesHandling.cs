@@ -26,20 +26,20 @@ namespace Demos.HackerU.Wpf.Helpers
 
         public static string ImageUpload()
         {
-            string destinationFile = "";
+            string originalFileName = "";
             OpenFileDialog dialog = new OpenFileDialog();
             if (dialog.ShowDialog() == true)
             {
                 //Full Path Of Original IMage
                 string originalFullPath = dialog.FileName;//c:\\Images\animal.jpg 
-                //Only File Name +Extention Of Original
-                string originalFileName = Path.GetFileName(originalFullPath);//animal.jpg
+                                                          //Only File Name +Extention Of Original
+                originalFileName = Path.GetFileName(originalFullPath);//animal.jpg
 
                 //combain global destination to destination
                 string destinationFolder = Path.Combine(Environment.CurrentDirectory, CreateFolder());
 
                 //combain global destination to destination
-                destinationFile = Path.Combine(destinationFolder, originalFileName);
+                string destinationFile = Path.Combine(destinationFolder, originalFileName);
 
 
                 //file copy from user folder to our destination and check if it exists
@@ -50,7 +50,7 @@ namespace Demos.HackerU.Wpf.Helpers
 
 
             }
-            return destinationFile;
+            return CreateFolder() + "\\" + originalFileName;
         }
 
 

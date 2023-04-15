@@ -1,4 +1,5 @@
-﻿using Demos.HackerU.Wpf.Helpers;
+﻿using Demos.HackerU.HomeWork.Inhheritance;
+using Demos.HackerU.Wpf.Helpers;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -46,14 +47,19 @@ namespace Demos.HackerU.Wpf
         private void listBoxStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var student = listBoxStudents.SelectedItem as Student;
-            if (student.ImagePath != null)
+            if (student != null)
             {
-                imgTitle.Source = new BitmapImage(new Uri(student.ImagePath));
+                if (student.ImagePath != null)
+                {
+                    string destinationFile = Path.Combine(Environment.CurrentDirectory, student.ImagePath);
+                    imgTitle.Source = new BitmapImage(new Uri(destinationFile));
+                }
+                else
+                {
+                    imgTitle.Source = new BitmapImage();
+                }
             }
-            else
-            {
-                imgTitle.Source = new BitmapImage();
-            }
+
 
 
             //--Check On Remove
@@ -136,21 +142,35 @@ namespace Demos.HackerU.Wpf
                 return;
             }
 
-            Student s = new Student();
-            s.Id = txtId.Text;
-            s.Name = txtName.Text;
-            try
+            var student = listBoxStudents.SelectedItem as Student;
+            if (student != null)
             {
-                s.Grade = int.Parse(txtGrade.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Enter Number Format: 0-100");
-                txtGrade.Clear();
+                student.Id = txtId.Text;
+                student.Name = txtName.Text;
+                if (student.ImagePath != null)
+                {
+                    string destinationFile = Path.Combine(Environment.CurrentDirectory, student.ImagePath);
+                    imgTitle.Source = new BitmapImage(new Uri(destinationFile));
+                }
+                else
+                {
+                    imgTitle.Source = new BitmapImage();
+                }
+                try
+                {
+                    student.Grade = int.Parse(txtGrade.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Enter Number Format: 0-100");
+                    txtGrade.Clear();
+                }
+
             }
 
+
             //Update Repo 
-            repo.UpdateStudent(s);
+            repo.UpdateStudent(student);
 
             //RefreshList
             int lastSelectedIndex = listBoxStudents.SelectedIndex;
@@ -243,12 +263,18 @@ namespace Demos.HackerU.Wpf
 
             var student = listBoxStudents.SelectedItem as Student;
 
-            student.ImagePath = FilesHandling.ImageUpload();
-
-            if (student.ImagePath != null)
+            if (student != null)
             {
-                imgTitle.Source = new BitmapImage(new Uri(student.ImagePath));
+                student.ImagePath = FilesHandling.ImageUpload();
+
+                string destinationFile = Path.Combine(Environment.CurrentDirectory, student.ImagePath);
+
+                if (student.ImagePath != null)
+                {
+                    imgTitle.Source = new BitmapImage(new Uri(destinationFile));
+                }
             }
+
 
         }
 
