@@ -10,7 +10,11 @@ namespace Demos.HackerU.Wpf.Helpers
 {
     public class FilesHandling
     {
-
+        /// <summary>
+        /// checks if folder exist 
+        /// create folder 
+        /// </summary>
+        /// <returns></returns>
         private static string CreateFolder()
         {
             //2--Check If Directory Not Exsist 
@@ -24,6 +28,10 @@ namespace Demos.HackerU.Wpf.Helpers
 
         }
 
+        /// <summary>
+        /// get path and return full image path
+        /// </summary>
+        /// <returns></returns>
         public static string ImageUpload()
         {
             string originalFileName = "";
@@ -53,6 +61,57 @@ namespace Demos.HackerU.Wpf.Helpers
             return CreateFolder() + "\\" + originalFileName;
         }
 
+        /// <summary>
+        /// returns full folder path
+        /// </summary>
+        /// <param name="targetDirectory">folder variable</param>
+        /// <returns></returns>
+        public static string[] GetFolderFilesFull(string targetDirectory)
+        {
+            var newFileEntries = new string[0];
+            //2--Check If Directory Exsist 
+            if (Directory.Exists(targetDirectory))
+            {
+                string destinationFolder = Path.Combine(Environment.CurrentDirectory, targetDirectory);
+
+                string[] fileEntries = Directory.GetFiles(destinationFolder);
+                if (fileEntries != null)
+                {
+                    newFileEntries = fileEntries;
+                }
+
+            }
+            return newFileEntries;
+        }
+
+
+        /// <summary>
+        /// return only the file name
+        /// </summary>
+        /// <param name="targetDirectory">folder variable</param>
+        /// <returns></returns>
+        public static string[] GetFolderFilesShort(string targetDirectory)
+        {
+            var newFileEntries = new string[0];
+            //2--Check If Directory Exsist 
+            if (Directory.Exists(targetDirectory))
+            {
+                string destinationFolder = Path.Combine(Environment.CurrentDirectory, targetDirectory);
+
+                string[] fileEntries = Directory.GetFiles(destinationFolder);
+                if (fileEntries != null)
+                {
+                    for (int i = 0; i < fileEntries.Length; i++)
+                    {
+                        fileEntries[i] = Path.GetFileName(fileEntries[i]);//animal.jpg                     
+                        fileEntries[i] = fileEntries[i].Replace(".json", "");
+                    }
+                    newFileEntries = fileEntries;
+                }
+
+            }
+            return newFileEntries;
+        }
 
     }
 }

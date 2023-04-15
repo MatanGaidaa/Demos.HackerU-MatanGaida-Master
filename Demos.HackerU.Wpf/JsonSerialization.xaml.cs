@@ -40,6 +40,14 @@ namespace Demos.HackerU.Wpf
             btnSave.IsEnabled = false;
             btnRemove.IsEnabled = false;
 
+            JsonComboBox.Items.Insert(0, "--Please Choose file--");
+            JsonComboBox.SelectedIndex = 0;
+            var data = FilesHandling.GetFolderFilesShort("AppData");
+            foreach (var file in data)
+            {
+                JsonComboBox.Items.Add(file);
+            }
+
             // repo.AddStudent(new Student { Name = "Test", Id = "1", Grade = 80 });
             // repo.AddStudent(new Student { Name = "Test2", Id = "2", Grade = 95 });
             //listBoxStudents.ItemsSource = this.repo.GetAllStudents();
@@ -219,6 +227,16 @@ namespace Demos.HackerU.Wpf
                 File.WriteAllText(filePathSelected, studentsJson);
             }
 
+            //claer and reshots the new folders in AppData
+            JsonComboBox.Items.Clear();
+            JsonComboBox.Items.Insert(0, "--Please Choose file--");
+            JsonComboBox.SelectedIndex = 0;
+            var data = FilesHandling.GetFolderFilesShort("AppData");
+            foreach (var file in data)
+            {
+                JsonComboBox.Items.Add(file);
+            }
+
 
         }
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
@@ -281,6 +299,19 @@ namespace Demos.HackerU.Wpf
         private void JsonComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+
+
+            //string studentsText = File.ReadAllText(this.PathLoader.Text);
+            //var studentsList =
+            //JsonSerializer.Deserialize<List<Student>>(studentsText);
+            ////2)Add Objects to Repo Manager
+            //foreach (Student item in studentsList)
+            //{
+            //    repo.AddStudent(item);
+            //}
+            ////3)Sync GUI LIST
+            //this.listBoxStudents.ItemsSource = null;
+            //this.listBoxStudents.ItemsSource = repo.GetAllStudents();
         }
     }
 }
