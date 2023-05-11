@@ -25,7 +25,8 @@ namespace Demos.HackerU.HomeWork.HW_16
         }
         public static void Point_PointEquals(object sender, PointEqalsEventArgs eventArgs)
         {
-            Console.WriteLine("X and Y are EQUALES : " + eventArgs.Value);
+            
+           Console.WriteLine("X and Y are EQUALES : " + eventArgs.Value);
 
         }
     }
