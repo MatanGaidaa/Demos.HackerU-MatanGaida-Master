@@ -1,0 +1,48 @@
+HomeWork 16
+------------
+EVENTS
+1) Point Class 
+ -Create Class Name It Point
+ -Ccreate 2 private fields:
+ int x
+ int y
+ -Create constractor with x and y parameters
+ -Create 2 properties X, Y for each field
+ -Create PointEqalsEventArgs that inherit EventArgs 
+  Add Value property of type int in PointEqalsEventArgs 
+ -Define Event of EventHandler<PointEqalsEventArgs> delegate in Point Class
+  that invoke each time X and Y become equals
+
+ -   Test the Point Class from Main(Main is the subscriber for Point Event)
+ -   Print the equal value of x and y in the subscriber callback
+ ---------------------------------------------------------------------------------
+ 2) PointsList (Continue Point Class)
+  - Create PointsList class
+  - Create Constractor that initilaize inner List<Point>
+  - Create AddPoint methods that will add new Point to the inner List:
+    void AddPoint(Point t)
+     void AddPoint(int x,int y)
+  - Create RemovePoint method that will remove first found point from the inner list
+      void RemovePoint(int x,int y)//Remove point by x,y
+      void RemovePoint(int index)//remove point by index
+
+  - Create event in PointsList that invoke each time new point is added,it should notify the new x,y values added 
+  - Create another event in PointsList , the event event  will invoke after removing a  Point notify the x,y values removed
+  -  Test the PointsList Class from Main(Main is the subscriber for PointsList event) and print the event Info 
+  ---------------------------------------------------------------------------------
+3)Generics:
+- Create Generic Class With T Parameter name it GlobalArray
+  - The class will have Array of T as field(Array is not List)
+  - Constractor: The Constractor will get fix size of the array as int parameter
+    and it will Initialize the array according that size
+  - create new method name it  AddOrUpdate :
+     public void AddOrUpdate(int index, T item)
+     The Method will add new item and if this item exsist it should update it
+  - Create new method name it GetData 
+      public T GetData(int index)
+      it return the generic Item in array according index parameter:    
+  - Advanced : Create Event each time item Updted int the Array
+  - Test The GlobalArray from Main With int,string,bool,Point
+
+------------------------------------------------------------------------------------
+

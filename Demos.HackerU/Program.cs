@@ -1,4 +1,5 @@
 ﻿using Demos.HackerU.HomeWork;
+using Demos.HackerU.HomeWork.HW_16;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Demos.HackerU
@@ -43,7 +44,11 @@ namespace Demos.HackerU
 
             //BankOOP.Run();
             //StoreOOP.Run();
-            HW13.Run();
+            //HW13.Run();
+
+
+            PointS.Run();
+
             Console.ReadKey();
         }
 
