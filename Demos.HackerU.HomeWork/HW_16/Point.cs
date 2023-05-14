@@ -14,7 +14,7 @@ namespace Demos.HackerU.HomeWork.HW_16
         public int X { get { return x; } set { x = value; isEqual(); } }
         public int Y { get { return y; } set { y = value; isEqual(); } }
 
-        public EventHandler<PointEqalsEventArgs> MyEventHandler = null;
+        public EventHandler<PointEventArgs> MyEventHandler = null;
 
 
         public Point()
@@ -33,23 +33,30 @@ namespace Demos.HackerU.HomeWork.HW_16
         {
             if (x == y)
             {
-                MyEventHandler?.Invoke(this, new PointEqalsEventArgs(x));
+                MyEventHandler?.Invoke(this, new PointEventArgs(x));
             }
 
 
         }
 
 
-        public class PointEqalsEventArgs : EventArgs
+        public class PointEventArgs : EventArgs
         {
 
             public int Value { get; set; }
+            public int X { get; set; }
+            public int Y { get; set; }
 
-            public PointEqalsEventArgs(int value)
+            public PointEventArgs(int value)
             {
                 Value = value;
             }
 
+            public PointEventArgs(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
         }
     }
 }
