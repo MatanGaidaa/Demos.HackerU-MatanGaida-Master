@@ -14,7 +14,7 @@ namespace Demos.HackerU.HomeWork.HW_16
         public int X { get { return x; } set { x = value; isEqual(); } }
         public int Y { get { return y; } set { y = value; isEqual(); } }
 
-        public EventHandler<PointEventArgs> MyEventHandler = null;
+        public event EventHandler<PointEventArgs> MyEventHandler = null;
 
 
         public Point()
@@ -37,6 +37,8 @@ namespace Demos.HackerU.HomeWork.HW_16
             }
 
 
+
+
         }
 
 
@@ -57,6 +59,11 @@ namespace Demos.HackerU.HomeWork.HW_16
                 X = x;
                 Y = y;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"X:{x} , Y:{y}";
         }
     }
 }
