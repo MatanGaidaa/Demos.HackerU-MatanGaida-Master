@@ -1,0 +1,32 @@
+HW 17 - THREADING
+
+[Question 1]:
+create a method name it downloadAndSave() 
+this method should get 2 parameters:
+1.get internet address (url) 
+2.name of a file (.txt)
+the method should download the content html of the url address(parameter 1)
+and save the downloaded text to a file (parameter 2)
+make 5 task running in parallel
+each task will execute downloadAndSave  with different parameters
+
+//-----------------------
+[Question 2]
+create wpf app
+Create 1 background task  that run when user click a button
+the method shoud taks 10 sec total 
+it should run in a loop of 10 times with 1 sec wait each
+
+-add progressbar and alabel  to the Window
+that update after finish each loop using a percent from 10% to 100%
+for example if the task is in its 5 index loop then progress bar display 50%
+and a label should display :50% finish
+
+//-------------------------
+
+[Question 3] (advanced)
+continue Question 2
+Make a button to enable cacel the  running task in the middle of its work
+Help Articles:
+https://johnthiriet.com/cancel-asynchronous-operation-in-csharp/
+https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-cancellation
