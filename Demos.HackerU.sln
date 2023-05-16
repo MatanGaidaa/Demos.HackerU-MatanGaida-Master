@@ -23,8 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{B7
 		HW_13.txt = HW_13.txt
 		HW_14.txt = HW_14.txt
 		HW_15.txt = HW_15.txt
-		HWֹֹ_16.txt = HWֹֹ_16.txt
 		HW_ֹ17.txt = HW_ֹ17.txt
+		HWֹ_18.txt = HWֹ_18.txt
+		HWֹֹ_16.txt = HWֹֹ_16.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU.HomeWork", "Demos.HackerU.HomeWork\Demos.HackerU.HomeWork.csproj", "{A793DE91-0776-42C3-BFEE-938888D77F0F}"

@@ -1,0 +1,39 @@
+Hw DataBase -SqlDataReader
+
+1) Create new Db 
+- Add New Table name it student
+- Add Columns 
+ - ID (Auto Increment,int)
+ - IdNum
+ - FirstName
+ - LastName
+ - Email
+ - CourseName
+ - Tel
+ - City
+ - Address
+ - StartCourseDate
+ - GradeAvg 
+ 
+ 2) Create Student Model 
+ 
+ 3) Create SudentDbRepository for accesing SQL
+
+ 4) Extract interface from SudentDbRepository name it ISudentRepository
+
+ 5) Run And Test Repository
+
+ 6) Create Menue Class
+   - that Get the ISudentRepository in Constractor
+   - Display() Method that show the menue operations  
+1. Insert New Student (press 1) 
+2. Show All Students (press 2) 
+3. Show Students in the same Course and grade avg in course (press 3)
+4. Get Student By Id (press 4) 
+5. Update Student By ID (press 5) 
+6. Delete Student By ID (press 6) 
+7. Save Last Result to JSON File (press 7)
+8. Exit (press 8)
+
+  - each operation may read inputs from console user 
+------------------------------------------------------------------------
