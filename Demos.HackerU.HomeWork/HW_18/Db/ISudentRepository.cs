@@ -1,8 +1,8 @@
 ﻿namespace Demos.HackerU.HomeWork.HW_18.Db
 {
-    public interface ISudentDbRepository
+    public interface ISudentRepository
     {
-        void AddNewStudent(StudentModel student);
+        bool AddNewStudent(StudentModel student);
         void DeleteStudentByID(int id);
         List<StudentModel> GetAllStudents();
         List<StudentModel> GetAllStudentsByCours(string courseName);
