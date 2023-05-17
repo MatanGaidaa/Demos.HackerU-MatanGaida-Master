@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demos.HackerU.HomeWork.HW_18
+namespace Demos.HackerU.HomeWork.HW_18.Ef
 {
-    public class SudentDbRepository
+    internal class SudentEfRepository
     {
+
     }
 }

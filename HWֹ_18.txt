@@ -1,4 +1,5 @@
-Hw DataBase -SqlDataReader
+Hw DataBase - SqlDataReader/EF
+(Create 2 repositories: SQLdDataReader/DbContext that inheritISudentRepository)
 
 1) Create new Db 
 - Add New Table name it student
@@ -17,7 +18,7 @@ Hw DataBase -SqlDataReader
  
  2) Create Student Model 
  
- 3) Create SudentDbRepository for accesing SQL
+ 3) Create SudentDbRepository for accesing SQL /Create SudentEfRepository
 
  4) Extract interface from SudentDbRepository name it ISudentRepository
 
