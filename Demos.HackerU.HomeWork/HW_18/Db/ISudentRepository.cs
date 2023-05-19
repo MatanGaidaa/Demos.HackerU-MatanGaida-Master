@@ -6,8 +6,8 @@
         void DeleteStudentByID(int id);
         List<StudentModel> GetAllStudents();
         List<StudentModel> GetAllStudentsByCours(string courseName);
-        StudentModel GetStudentById();
-        void SaveLastStudenttoFile();
-        void UpDateStudentByID(int id);
+        StudentModel GetStudentById(int id);
+        void SaveLastStudentToFile();
+        void UpDateStudentByID(int id, StudentModel studentToUpDate);
     }
 }

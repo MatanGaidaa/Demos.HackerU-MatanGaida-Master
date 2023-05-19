@@ -123,24 +123,186 @@ namespace Demos.HackerU.HomeWork.HW_18.Db
         public List<StudentModel> GetAllStudentsByCours(string courseName)
         {
             //Show Students in the same Course and grade avg in course
-            return new List<StudentModel>();
+            List<StudentModel> list = new List<StudentModel>();
+
+            var con = new SqlConnection(connectionString);
+            try
+            {
+                //2) CREATE SQL COMMAND  
+                string query = "SELECT * FROM Student";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                //3) Open Connection
+                con.Open();
+
+                //4) EXecute Command And Get Reader
+                SqlDataReader dbReader = cmd.ExecuteReader();
+
+                //5) Use Reader to read each row in a loop
+                //true while row is not EOF of ROWS Data
+                while (dbReader.Read()) //Single row for each iteration
+                {
+
+                    //If Value is Null
+                    object emailVal = dbReader.GetString(4);
+                    object email = (emailVal == DBNull.Value || emailVal == null) ? "" : emailVal;
+
+                    object telVal = dbReader.GetString(6);
+                    object tel = (telVal == DBNull.Value || telVal == null) ? "" : telVal;
+
+                    StudentModel studentModel = new StudentModel
+                    {
+                        Id = dbReader.GetInt32(0),
+                        IdNum = dbReader.GetInt32(1),
+                        FirstName = dbReader.GetString(2),
+                        LastName = dbReader.GetString(3),
+                        Email = (string)email,
+                        CourseName = dbReader.GetString(5),
+                        Tel = (string)tel,
+                        City = dbReader.GetString(7),
+                        Address = dbReader.GetString(8),
+                        StartCourseDate = dbReader.GetDateTime(9),
+                        GradeAvg = (float)dbReader.GetDouble(10)
+                    };
+                    list.Add(studentModel);
+                }
+
+                dbReader.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State != ConnectionState.Closed)
+                {
+                    con.Close();
+                }
+            }
+
+            list = list.FindAll(course => course.CourseName == courseName);
+            return list;
         }
 
-        public StudentModel GetStudentById()
+        public StudentModel GetStudentById(int id)
         {
-            return new StudentModel();
+            StudentModel student = new StudentModel();
+            List<StudentModel> list = new List<StudentModel>();
+            var con = new SqlConnection(connectionString);
+            try
+            {
+                //2) CREATE SQL COMMAND  
+                string query = "SELECT * FROM Student";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                //3) Open Connection
+                con.Open();
+
+                //4) EXecute Command And Get Reader
+                SqlDataReader dbReader = cmd.ExecuteReader();
+
+                //5) Use Reader to read each row in a loop
+                //true while row is not EOF of ROWS Data
+                while (dbReader.Read()) //Single row for each iteration
+                {
+
+                    //If Value is Null
+                    object emailVal = dbReader.GetString(4);
+                    object email = (emailVal == DBNull.Value || emailVal == null) ? "" : emailVal;
+
+                    object telVal = dbReader.GetString(6);
+                    object tel = (telVal == DBNull.Value || telVal == null) ? "" : telVal;
+
+                    StudentModel studentModel = new StudentModel
+                    {
+                        Id = dbReader.GetInt32(0),
+                        IdNum = dbReader.GetInt32(1),
+                        FirstName = dbReader.GetString(2),
+                        LastName = dbReader.GetString(3),
+                        Email = (string)email,
+                        CourseName = dbReader.GetString(5),
+                        Tel = (string)tel,
+                        City = dbReader.GetString(7),
+                        Address = dbReader.GetString(8),
+                        StartCourseDate = dbReader.GetDateTime(9),
+                        GradeAvg = (float)dbReader.GetDouble(10)
+                    };
+                    list.Add(studentModel);
+                }
+
+                dbReader.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State != ConnectionState.Closed)
+                {
+                    con.Close();
+                }
+            }
+
+            student = list.Find(Id => Id.Id == id);
+
+            return student;
         }
 
-        public void UpDateStudentByID(int id)
+        public void UpDateStudentByID(int id, StudentModel studentToUpDate)
         {
+            //			UPDATE Customers
+            //SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+            //WHERE CustomerID = 1;
+            string queryInsert = "UPDATE Student SET " +
+                                 "IdNum=@idNum," +
+                                 "FirstName=@firstName, " +
+                                 "LastName =@lastName, " +
+                                 "Email=@email, " +
+                                 "CourseName=@courseName," +
+                                 "Tel=@tel," +
+                                 "City=@city," +
+                                 "Address=@address," +
+                                 "StartCourseDate=@startCourseDate," +
+                                 "GradeAvg=@gradeAvg" +
+                                 $" WHERE Id={id}";
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
 
+                SqlCommand cmd = new SqlCommand(queryInsert, con);
+                //Here we will insert the correct values into the placeholders via the commands
+                //parameters
+                cmd.Parameters.AddWithValue($"{id}", studentToUpDate.Id);
+                cmd.Parameters.AddWithValue("@idNum", studentToUpDate.IdNum);
+                cmd.Parameters.AddWithValue("@firstName", studentToUpDate.FirstName);
+                cmd.Parameters.AddWithValue("@lastName", studentToUpDate.LastName);
+                cmd.Parameters.AddWithValue("@email", studentToUpDate.Email);
+                cmd.Parameters.AddWithValue("@courseName", studentToUpDate.CourseName);
+                cmd.Parameters.AddWithValue("@tel", studentToUpDate.Tel);
+                cmd.Parameters.AddWithValue("@city", studentToUpDate.City);
+                cmd.Parameters.AddWithValue("@address", studentToUpDate.Address);
+                cmd.Parameters.AddWithValue("@startCourseDate", studentToUpDate.StartCourseDate);
+                cmd.Parameters.AddWithValue("@gradeAvg", studentToUpDate.GradeAvg);
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public void DeleteStudentByID(int id)
         {
+            string queryDelete = "DELETE FROM Student WHERE id=@idParam";
 
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(queryDelete, con);
+                //Here we will insert the correct values into the placeholders via the commands
+                //parameters
+
+                cmd.Parameters.AddWithValue("@idParam", id);
+
+                //INSERT/DELETE/UPDATE use ExecuteNonQuery
+                cmd.ExecuteNonQuery();
+
+            }
         }
-        public void SaveLastStudenttoFile()
+        public void SaveLastStudentToFile()
         {
 
         }
