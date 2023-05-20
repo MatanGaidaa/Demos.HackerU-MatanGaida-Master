@@ -12,9 +12,9 @@ namespace Demos.HackerU
         static void Main(string[] args)
         {
             //Hw1.Run();
-            Console.WriteLine("-------------");
+            //Console.WriteLine("-------------");
 
-            Console.WriteLine("-------------");
+            //Console.WriteLine("-------------");
 
 
 
