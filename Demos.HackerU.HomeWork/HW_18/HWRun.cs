@@ -179,7 +179,8 @@ namespace Demos.HackerU.HomeWork.HW_18
             switch (Console.ReadLine())
             {
                 case "1":
-                    StudentModel studentModel = new StudentModel(2, 2, "Matan", "Gaida", "Matan@gmail.com", "FullStack", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
+                    //FunctionsOpration.AddNewStudent();
+                    StudentModel studentModel = new StudentModel(2, "Matan", "Gaida", "Matan@gmail.com", "FullStack", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
                     studentDb.AddNewStudent(studentModel);
                     return true;
                 case "2":
