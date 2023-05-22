@@ -1,10 +1,10 @@
-﻿using Demos.HackerU.HomeWork.HW_18.Db;
-using Demos.HackerU.HomeWork.Inhheritance;
+﻿using Demos.HackerU.HomeWork.Inhheritance;
 using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Demos.HackerU.HomeWork.HW_18.Ef
@@ -82,9 +82,25 @@ namespace Demos.HackerU.HomeWork.HW_18.Ef
             }
         }
 
-        public void SaveLastStudentToFile()
+        public void SaveLastStudentToFile(StudentModel lastStudentInList, StudentModel lastStudentInCourse)
         {
-            throw new NotImplementedException();
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonSerializer1 = JsonSerializer.Serialize(lastStudentInList, options);
+            string jsonSerializer2 = JsonSerializer.Serialize(lastStudentInCourse, options);
+            Console.WriteLine("Please Enter jsonFile:");
+            string filename = Console.ReadLine();
+
+            //if Data folder is not exsist in current directory 
+            if (!Directory.Exists("DataInfo"))
+            {
+                Directory.CreateDirectory("DataInfo");
+            }
+            //string path = "Data\\" + filename + ".json";
+            string path = Path.Combine("DataInfo", filename + ".json");//"Data\test.json"
+
+            File.WriteAllText(path, jsonSerializer1);
+            File.WriteAllText(path, jsonSerializer2);
+
         }
 
         public void UpDateStudentByID(int id, StudentModel studentToUpDate)

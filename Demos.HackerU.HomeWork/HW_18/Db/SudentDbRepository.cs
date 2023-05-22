@@ -244,13 +244,12 @@ namespace Demos.HackerU.HomeWork.HW_18.Db
             return student;
         }
 
-        public void UpDateStudentByID(int id, StudentModel studentToUpDate)
+        public void UpDateStudentByID(int idNum, StudentModel studentToUpDate)
         {
             //			UPDATE Customers
             //SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
             //WHERE CustomerID = 1;
             string queryInsert = "UPDATE Student SET " +
-                                 "IdNum=@idNum," +
                                  "FirstName=@firstName, " +
                                  "LastName =@lastName, " +
                                  "Email=@email, " +
@@ -260,7 +259,7 @@ namespace Demos.HackerU.HomeWork.HW_18.Db
                                  "Address=@address," +
                                  "StartCourseDate=@startCourseDate," +
                                  "GradeAvg=@gradeAvg" +
-                                 $" WHERE Id={id}";
+                                 $" WHERE IdNum={idNum}";
             using (var con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -268,7 +267,7 @@ namespace Demos.HackerU.HomeWork.HW_18.Db
                 SqlCommand cmd = new SqlCommand(queryInsert, con);
                 //Here we will insert the correct values into the placeholders via the commands
                 //parameters
-                cmd.Parameters.AddWithValue($"{id}", studentToUpDate.Id);
+                cmd.Parameters.AddWithValue($"{idNum}", studentToUpDate.Id);
                 cmd.Parameters.AddWithValue("@idNum", studentToUpDate.IdNum);
                 cmd.Parameters.AddWithValue("@firstName", studentToUpDate.FirstName);
                 cmd.Parameters.AddWithValue("@lastName", studentToUpDate.LastName);
@@ -302,7 +301,7 @@ namespace Demos.HackerU.HomeWork.HW_18.Db
 
             }
         }
-        public void SaveLastStudentToFile()
+        public void SaveLastStudentToFile(StudentModel lastStudentInList, StudentModel lastStudentInCourse)
         {
 
         }

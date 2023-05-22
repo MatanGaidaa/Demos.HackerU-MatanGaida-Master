@@ -106,62 +106,68 @@ namespace Demos.HackerU.HomeWork.HW_18
             switch (select)
             {
                 case "1":
-                    return SqlDb(new SudentDbRepository());
+                    return Sql(new SudentDbRepository());
                 case "2":
-                    return SqlEF(SudentEfRepository.GetInstance());
+                    return Sql(SudentEfRepository.GetInstance());
                 default:
                     return false;
             }
         }
 
 
-        private static bool SqlEF(ISudentRepository studentEf)
+
+
+        private static bool Sql(ISudentRepository studentSQL)
         {
             ChoseData();
+
             switch (Console.ReadLine())
             {
                 case "1":
-                    StudentModel studentModel = new StudentModel(1, "Matan", "Gaida", "Matan@gmail.com", "FullStack", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
-                    studentEf.AddNewStudent(studentModel);
+                    studentSQL.AddNewStudent(FunctionsOpration.AddNewStudent());
                     return true;
                 case "2":
-                    var sudentList = studentEf.GetAllStudents();
-                    foreach (var student in sudentList)
+                    var studentList = studentSQL.GetAllStudents();
+                    StudentModel lastStudentInList = new();
+                    for (int i = 0; i < studentList.Count; i++)
                     {
-                        Console.WriteLine(student);
-                    };
+                        if (i == studentList.Count - 1)
+                        {
+                            lastStudentInList = studentList[i];
+                            FunctionsOpration.SaveTOFileParam(lastStudentInList);
+                        }
+                        Console.WriteLine("\n" + studentList[i]);
+                    }
                     return true;
                 case "3":
-                    sudentList = studentEf.GetAllStudentsByCours("FullStack");
-                    foreach (var student in sudentList)
+                    studentList = studentSQL.GetAllStudentsByCours(FunctionsOpration.ShowAllStudents(studentSQL.GetAllStudents()));
+                    StudentModel lastStudentInCourse = new();
+                    for (int i = 0; i < studentList.Count; i++)
                     {
-                        Console.WriteLine("\n" + student);
+                        if (i == studentList.Count - 1)
+                        {
+                            lastStudentInCourse = studentList[i];
+                            FunctionsOpration.SaveTOFileParam(lastStudentInCourse);
+                        }
+                        Console.WriteLine("\n" + studentList[i]);
                     }
                     return true;
 
                 case "4":
-                    Console.Write("\nEnter Id:");
-                    int id = int.Parse(Console.ReadLine());
-                    StudentModel student1 = studentEf.GetStudentById(id);
-                    if (student1 != null)
-                    {
-                        Console.WriteLine("\n" + student1);
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nstudent dont exist");
-                    }
-
+                    StudentModel student1 = studentSQL.GetStudentById(FunctionsOpration.GetStudentIdChecked(studentSQL.GetAllStudents()));
+                    Console.WriteLine("\n" + student1.FirstName + " " + student1.LastName);
+                    Console.WriteLine("----------------");
+                    Console.WriteLine(student1);
                     return true;
                 case "5":
                     StudentModel studentModel6 = new StudentModel(3, 3, "David", "Atar", "Roi@gmail.com", "DBFull", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
-                    studentEf.UpDateStudentByID(4, studentModel6);
+                    studentSQL.UpDateStudentByID(4, studentModel6);
                     return true;
                 case "6":
-                    studentEf.DeleteStudentByID(4);
+                    studentSQL.DeleteStudentByID(4);
                     return true;
                 case "7":
-                    studentEf.SaveLastStudentToFile();
+                    //studentSQL.SaveLastStudentToFile(lastStudentInList, lastStudentInCourse);
                     return true;
                 case "8":
                     Display();
@@ -172,69 +178,6 @@ namespace Demos.HackerU.HomeWork.HW_18
                     return true;
             }
         }
-
-        private static bool SqlDb(ISudentRepository studentDb)
-        {
-            ChoseData();
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    //FunctionsOpration.AddNewStudent();
-                    StudentModel studentModel = new StudentModel(2, "Matan", "Gaida", "Matan@gmail.com", "FullStack", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
-                    studentDb.AddNewStudent(studentModel);
-                    return true;
-                case "2":
-                    var sudentList = studentDb.GetAllStudents();
-                    foreach (var student in sudentList)
-                    {
-                        Console.WriteLine(student);
-                    };
-                    return true;
-                case "3":
-                    sudentList = studentDb.GetAllStudentsByCours("FullStack");
-                    foreach (var student in sudentList)
-                    {
-                        Console.WriteLine("\n" + student);
-                    }
-                    return true;
-
-                case "4":
-                    Console.Write("\nEnter Id:");
-                    int id = int.Parse(Console.ReadLine());
-                    StudentModel student1 = studentDb.GetStudentById(id);
-                    if (student1 != null)
-                    {
-                        Console.WriteLine("\n" + student1);
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nstudent dont exist");
-                    }
-
-                    return true;
-                case "5":
-                    StudentModel studentModel6 = new StudentModel(3, 3, "David", "Atar", "Roi@gmail.com", "DBFull", "0547580566", "Netanya", "bar-lev", DateTime.Now, 95);
-                    studentDb.UpDateStudentByID(4, studentModel6);
-                    return true;
-                case "6":
-                    studentDb.DeleteStudentByID(4);
-                    return true;
-                case "7":
-                    studentDb.SaveLastStudentToFile();
-                    return true;
-                case "8":
-                    Display();
-                    return false;
-                case "9":
-                    return false;
-                default:
-                    return true;
-            }
-
-
-
-        }
-
         private static void ChoseData()
         {
 
