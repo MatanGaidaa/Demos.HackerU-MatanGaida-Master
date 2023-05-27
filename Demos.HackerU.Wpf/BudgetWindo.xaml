@@ -93,13 +93,14 @@
                     Content="Create Budget"
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}" />
             </StackPanel>
+            <Button Name="DelBtn" Content="Delete From DB" HorizontalAlignment="Left" Margin="155,0,0,274" RenderTransformOrigin="0.472,-1.596" Click="DelBtn_Click" Grid.Column="1" Width="101"/>
         </Grid>
 
 
 
 
 
-        <mah:FlyoutsControl>
+        <mah:FlyoutsControl Margin="0,0,28,0">
             <mah:Flyout
                 x:Name="UpdateFlyout"
                 Width="1000px"

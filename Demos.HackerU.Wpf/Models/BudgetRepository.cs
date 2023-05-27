@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace Demos.HackerU.Wpf.Models
 {
@@ -17,10 +18,7 @@ namespace Demos.HackerU.Wpf.Models
             }
         }
 
-        public static void RemoveBudgetFromDb()
-        {
 
-        }
         public static List<Budget> GetAllBudget()
         {
             List<Budget> list = new List<Budget>();
@@ -29,6 +27,16 @@ namespace Demos.HackerU.Wpf.Models
                 list.AddRange(db.budgets);
             }
             return list;
+        }
+
+
+        public static void RemoveBudgetFromDb(Budget budgetToDel)
+        {
+            using (BudgetContext db = new BudgetContext())
+            {
+                db.Remove(budgetToDel);
+                db.SaveChanges();
+            }
         }
     }
 }

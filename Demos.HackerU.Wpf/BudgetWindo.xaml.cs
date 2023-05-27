@@ -106,5 +106,22 @@ namespace Demos.HackerU.Wpf
         {
             BudgetListView.ItemsSource = BudgetRepository.GetAllBudget();
         }
+
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Budget budgetToDel = BudgetListView.SelectedItem as Budget;
+            if (budgetToDel != null)
+            {
+                BudgetRepository.RemoveBudgetFromDb(budgetToDel);
+                BudgetListView.ItemsSource = BudgetRepository.GetAllBudget();
+            }
+            else
+            {
+                MessageBox.Show("No Budget selectd");
+
+            }
+        }
+
+
     }
 }
