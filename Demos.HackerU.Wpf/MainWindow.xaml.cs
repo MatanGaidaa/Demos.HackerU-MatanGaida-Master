@@ -104,10 +104,7 @@ namespace Demos.HackerU.Wpf
             st.ShowDialog();
         }
 
-        private void txtBoxLog_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
 
         private void btnCategoriesWindow_Click(object sender, RoutedEventArgs e)
         {
@@ -196,6 +193,12 @@ namespace Demos.HackerU.Wpf
 
             JsonSerialization j = new JsonSerialization();
             j.ShowDialog();
+        }
+
+        private void btnBudget_Click(object sender, RoutedEventArgs e)
+        {
+            BudgetWindo b = new BudgetWindo();
+            b.ShowDialog();
         }
     }
 }

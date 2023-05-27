@@ -1,0 +1,34 @@
+HW 17 - Database
+Question 1
+----------
+1) Examine BudgetWindow In our WPF Project
+2) Add DB Capabilities (using entityFramework) 
+   2.1) When Window is loaded display all items from DataBase
+   2.2) When Budget item is added by user It Should Added to DB Table
+
+Question 2
+-----------
+1) Create One to many relation 
+ with the following models: 
+ - Category
+ - ManagerEmployee
+ Choose your own Properties for each model
+
+Category can be ownered by 1 manger
+Manager  can be responsible for many categories
+
+2) Add Manager with few Categories to DB
+-----------
+
+3) Create Many to Many relation:
+   with the following Models:
+   - Category
+   - Product
+ each product can be in many categories
+ each category have many products
+
+ 4)
+ -  Add Category with 3 Products to DB
+ -  Add Product with 2 categories to DB
+
+------------
