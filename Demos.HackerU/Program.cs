@@ -2,6 +2,7 @@
 using Demos.HackerU.HomeWork.HW_16;
 using Demos.HackerU.HomeWork.HW_17;
 using Demos.HackerU.HomeWork.HW_18;
+using Demos.HackerU.HomeWork.HW19__Q3_Q4;
 using Demos.HackerU.HomeWork.HW19_Q2;
 using System.Security.Cryptography.X509Certificates;
 
@@ -56,7 +57,9 @@ namespace Demos.HackerU
 
             //HW18Run.Run();
 
-            MainRunHW19.Run();
+            //MainRunHW19.Run();
+
+            HW19_Q3_4.Run();
 
             Console.ReadKey();
         }
