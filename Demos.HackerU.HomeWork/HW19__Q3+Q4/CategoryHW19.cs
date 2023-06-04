@@ -13,8 +13,6 @@ namespace Demos.HackerU.HomeWork.HW19__Q3_Q4
 
         public int Id { get; set; }
 
-        public int ProductId { get; set; }
-
         public List<ProductHW19> ProductsList { get; set; }
     }
 }

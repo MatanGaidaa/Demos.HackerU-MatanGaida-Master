@@ -13,7 +13,6 @@ namespace Demos.HackerU.HomeWork.HW19__Q3_Q4
 
         public int Id { get; set; }
 
-        public int CategoryId { get; set; }
 
         public List<CategoryHW19> CategoriesList { get; set; }
 

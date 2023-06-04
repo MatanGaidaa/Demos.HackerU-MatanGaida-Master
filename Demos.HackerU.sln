@@ -27,11 +27,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{B7
 		HW_19.txt = HW_19.txt
 		HW_ֹ17.txt = HW_ֹ17.txt
 		HWֹ_18.txt = HWֹ_18.txt
+		HWֹ_20.txt = HWֹ_20.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU.HomeWork", "Demos.HackerU.HomeWork\Demos.HackerU.HomeWork.csproj", "{A793DE91-0776-42C3-BFEE-938888D77F0F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos.HackerU.Wpf", "Demos.HackerU.Wpf\Demos.HackerU.Wpf.csproj", "{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.HomeWork", "Demos.HomeWorke\Demos.HomeWork.csproj", "{8A3E322E-6E0C-4369-9F58-14A2A475AA72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +54,10 @@ Global
 		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13DD56B1-3928-4FF8-90F7-516A7C9D4F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3E322E-6E0C-4369-9F58-14A2A475AA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3E322E-6E0C-4369-9F58-14A2A475AA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3E322E-6E0C-4369-9F58-14A2A475AA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3E322E-6E0C-4369-9F58-14A2A475AA72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,19 @@
+HW_20
+ - Create ASP.NET API project
+ - Create 2 EF Models And Generate DataBase with many to many relashionship
+   - Users
+   - Roles
+   (3 Tables Should created on SQL)
+
+- Create UsersRolesRepository that enable to crud Both enteties
+
+
+- In Addition  support the following methods by API ( Repository also should be support this,because it called by API) 
+  - User Login(...) 
+  - User Register(...)
+  - bool AddUserToRole(....)
+  - bool RemoveUserFromRole(...)
+  - bool UpdateUserRole(...)
+  - List<string> GetAllUsersEmailsInRole(...)
+  - bool IsUserInRole(....)
+

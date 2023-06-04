@@ -52,9 +52,6 @@ namespace Demos.HackerU.HomeWork.Migrations.CPDataBMigrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("categoryHW19s");
@@ -67,9 +64,6 @@ namespace Demos.HackerU.HomeWork.Migrations.CPDataBMigrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<string>("ProductDescription")
                         .IsRequired()

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Demos.HackerU.HomeWork.Migrations.CPDataBMigrations
 {
     [DbContext(typeof(CPDataB))]
-    [Migration("20230528133344_Ver1")]
-    partial class Ver1
+    [Migration("20230528140055_ver1")]
+    partial class ver1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,9 +55,6 @@ namespace Demos.HackerU.HomeWork.Migrations.CPDataBMigrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("categoryHW19s");
@@ -70,9 +67,6 @@ namespace Demos.HackerU.HomeWork.Migrations.CPDataBMigrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<string>("ProductDescription")
                         .IsRequired()
